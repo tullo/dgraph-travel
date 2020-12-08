@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travel
+spec:
+  selector:
+    matchLabels:
+      app: travel
+  template:
+    metadata:
+      labels:
+        app: travel
+    spec:
+      dnsPolicy: ClusterFirstWithHostNet
+      hostNetwork: true
+      containers:
+      - name: api
+        image: travel-api-amd64:1.0
+        env:
+        - name: TRAVEL_DGRAPH_URL
+          valueFrom:
+            configMapKeyRef:
+              name: travel
+              key: dgraph_url
+        - name: TRAVEL_API_KEYS_MAPS_KEY
+          valueFrom:
+            configMapKeyRef:
+              name: travel
+              key: map_key
+        ports:
+        - name: api
+          containerPort: 3000
+        - name: api-debug
+          containerPort: 4000
+        readinessProbe:
+          httpGet:
+            path: /debug/readiness
+            port: api-debug
+          initialDelaySeconds: 30
+          periodSeconds: 15
+      - name: ui
+        image: travel-ui-amd64:1.0
+        env:
+        - name: TRAVEL_DGRAPH_URL
+          valueFrom:
+            configMapKeyRef:
+              name: travel
+              key: dgraph_url
+        - name: TRAVEL_API_KEYS_MAPS_KEY
+          valueFrom:
+            configMapKeyRef:
+              name: travel
+              key: map_key
+        ports:
+        - name: ui
+          containerPort: 3080
+        - name: ui-debug
+          containerPort: 4080
+        readinessProbe:
+          httpGet:
+            path: /debug/readiness
+            port: ui-debug
+          initialDelaySeconds: 30
+          periodSeconds: 15
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: travel
+spec:
+  selector:
+    service: travel
+  ports:
+  - name: ui
+    port: 3080
+    targetPort: ui
+  - name: ui-debug
+    port: 4080
+    targetPort: ui-debug

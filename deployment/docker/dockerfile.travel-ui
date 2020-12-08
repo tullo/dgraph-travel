@@ -1,0 +1,38 @@
+# Build the Go Binary.
+FROM golang:1.15.5-alpine3.12 as builder
+ENV CGO_ENABLED 0
+ARG VCS_REF
+
+# Create a location in the container for the source code. Using the
+# default GOPATH location.
+RUN mkdir -p /service
+
+# Copy the source code into the container.
+WORKDIR /service
+COPY . .
+
+# Build the service binary. We are doing this last since this will be different
+# every time we run through this process.
+WORKDIR /service/app/travel-ui
+RUN go build -ldflags "-X main.build=${VCS_REF}"
+
+
+# Run the Go Binary in Alpine.
+FROM alpine:3.12
+ARG BUILD_DATE
+ARG VCS_REF
+ARG PACKAGE_NAME
+ARG PACKAGE_PREFIX
+RUN addgroup -g 3000 -S app && adduser -u 100000 -S app -G app --no-create-home --disabled-password
+USER 100000
+WORKDIR /app
+COPY --from=builder --chown=app:app /service/app/travel-ui/assets/ /app/assets/
+COPY --from=builder --chown=app:app /service/app/travel-ui/travel-ui /app/travel-ui
+CMD ["/app/travel-ui"]
+
+LABEL org.opencontainers.image.created="${BUILD_DATE}" \
+      org.opencontainers.image.title="travel-ui" \
+      org.opencontainers.image.authors="ArdanLabs, Dgraph" \
+      org.opencontainers.image.source="https://github.com/dgraph-io/travel/app/travel-ui" \
+      org.opencontainers.image.revision="${VCS_REF}" \
+      org.opencontainers.image.vendor="Dgraph"

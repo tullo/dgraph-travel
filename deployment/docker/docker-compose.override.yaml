@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+
+  dgraph-zero:
+    environment:
+      DGRAPH_ZERO_MY: dgraph-zero:5080
+    
+  dgraph-alpha:
+    environment:
+      DGRAPH_ALPHA_LRU_MB: '1024'
+      DGRAPH_ALPHA_MY: dgraph-alpha:7080
+      DGRAPH_ALPHA_WHITELIST: 0.0.0.0/0
+      DGRAPH_ALPHA_ZERO: dgraph-zero:5080
+    ports:
+    - published: 8080
+      target: 8080
+
+  travel-api:
+    environment:
+      TRAVEL_API_KEYS_MAPS_KEY: ''
+      TRAVEL_DGRAPH_URL: http://dgraph-alpha:8080
+    ports:
+    - published: 3000 # API
+      target: 3000
+    - published: 4000 # API DEBUG
+      target: 4000
+
+  travel-ui:
+    environment:
+      TRAVEL_API_KEYS_MAPS_KEY: ''
+      TRAVEL_DGRAPH_URL: http://dgraph-alpha:8080
+      TRAVEL_WEB_UI_HOST: '0.0.0.0:3080'
+    ports:
+    - published: 3080 # UI
+      target: 3080
+    - published: 4080 # UI DEBUG
+      target: 4080

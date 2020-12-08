@@ -1,0 +1,30 @@
+version: '3.8'
+
+networks:
+  shared-network:
+    driver: bridge
+services:
+  travel-api:
+    container_name: travel-api
+    env_file:
+      - slash.env
+    image: travel-api-amd64:1.0
+    networks:
+      shared-network:
+    ports:
+    - published: 3000 # API
+      target: 3000
+    - published: 4000 # DEBUG API
+      target: 4000
+  travel-ui:
+    container_name: travel-ui
+    env_file:
+      - slash.env
+    image: travel-ui-amd64:1.0
+    networks:
+      shared-network:
+    ports:
+    - published: 3080 # UI
+      target: 3080
+    - published: 4080 # DEBUG UI
+      target: 4080

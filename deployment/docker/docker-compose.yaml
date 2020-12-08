@@ -1,0 +1,42 @@
+version: '3.8'
+
+networks:
+  shared-network:
+    driver: bridge
+
+services:
+
+  dgraph-zero:
+    command: dgraph zero
+    container_name: dgraph-zero
+    image: dgraph/dgraph:v20.07.2
+    networks:
+      shared-network:
+
+  dgraph-alpha:
+    command: dgraph alpha --vmodule=server=3
+    container_name: dgraph-alpha
+    depends_on:
+      dgraph-zero:
+        condition: service_started
+    image: dgraph/dgraph:v20.07.2
+    networks:
+      shared-network:
+
+  travel-api:
+    container_name: travel-api
+    depends_on:
+      dgraph-alpha:
+        condition: service_started
+    image: travel-api-amd64:1.0
+    networks:
+      shared-network:
+
+  travel-ui:
+    container_name: travel-ui
+    depends_on:
+      dgraph-alpha:
+        condition: service_started
+    image: travel-ui-amd64:1.0
+    networks:
+      shared-network:

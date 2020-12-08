@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: travel
+data:
+  dgraph_url: "http://localhost:8080"
+  map_key: ""
+  web-ui-host: "0.0.0.0:3080"
