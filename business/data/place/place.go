@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/ardanlabs/graphql"
-	"github.com/dgraph-io/travel/business/data"
+	"github.com/tullo/dgraph-travel/business/data"
 	"github.com/pkg/errors"
 )
 

@@ -12,9 +12,9 @@ import (
 	"time"
 
 	"github.com/ardanlabs/conf"
-	"github.com/dgraph-io/travel/app/travel-api/handlers"
-	"github.com/dgraph-io/travel/business/data"
-	"github.com/dgraph-io/travel/business/loader"
+	"github.com/tullo/dgraph-travel/app/travel-api/handlers"
+	"github.com/tullo/dgraph-travel/business/data"
+	"github.com/tullo/dgraph-travel/business/loader"
 	"github.com/pkg/errors"
 )
 

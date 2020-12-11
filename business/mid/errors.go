@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/dgraph-io/travel/foundation/web"
+	"github.com/tullo/dgraph-travel/foundation/web"
 )
 
 // Errors handles errors coming out of the call chain. It detects normal

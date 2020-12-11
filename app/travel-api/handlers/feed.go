@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/dgraph-io/travel/business/data"
-	"github.com/dgraph-io/travel/business/data/schema"
-	"github.com/dgraph-io/travel/business/loader"
-	"github.com/dgraph-io/travel/foundation/web"
+	"github.com/tullo/dgraph-travel/business/data"
+	"github.com/tullo/dgraph-travel/business/data/schema"
+	"github.com/tullo/dgraph-travel/business/loader"
+	"github.com/tullo/dgraph-travel/foundation/web"
 	"github.com/pkg/errors"
 )
 

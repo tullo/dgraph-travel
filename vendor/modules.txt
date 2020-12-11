@@ -7,29 +7,6 @@ github.com/ardanlabs/conf
 # github.com/ardanlabs/graphql v1.4.2
 ## explicit
 github.com/ardanlabs/graphql
-# github.com/dgraph-io/travel v0.0.0-20201125183607-5f3ca889d4bc
-## explicit
-github.com/dgraph-io/travel/app/travel-admin/commands
-github.com/dgraph-io/travel/app/travel-api/handlers
-github.com/dgraph-io/travel/app/travel-ui/handlers
-github.com/dgraph-io/travel/business/data
-github.com/dgraph-io/travel/business/data/advisory
-github.com/dgraph-io/travel/business/data/auth
-github.com/dgraph-io/travel/business/data/city
-github.com/dgraph-io/travel/business/data/place
-github.com/dgraph-io/travel/business/data/ready
-github.com/dgraph-io/travel/business/data/schema
-github.com/dgraph-io/travel/business/data/user
-github.com/dgraph-io/travel/business/data/weather
-github.com/dgraph-io/travel/business/feeds/advisory
-github.com/dgraph-io/travel/business/feeds/places
-github.com/dgraph-io/travel/business/feeds/weather
-github.com/dgraph-io/travel/business/loader
-github.com/dgraph-io/travel/business/mid
-github.com/dgraph-io/travel/foundation/tests
-github.com/dgraph-io/travel/foundation/web
-# github.com/dgrijalva/jwt-go v3.2.0+incompatible
-github.com/dgrijalva/jwt-go
 # github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1
 ## explicit
 github.com/dgrijalva/jwt-go/v4
@@ -55,11 +32,13 @@ github.com/google/go-cmp/cmp/internal/value
 ## explicit
 github.com/google/uuid
 # github.com/leodido/go-urn v1.2.0
+## explicit
 github.com/leodido/go-urn
 # github.com/pkg/errors v0.9.1
 ## explicit
 github.com/pkg/errors
 # go.opencensus.io v0.22.5
+## explicit
 go.opencensus.io/internal/tagencoding
 go.opencensus.io/metric/metricdata
 go.opencensus.io/metric/metricproducer
@@ -73,12 +52,15 @@ go.opencensus.io/tag
 golang.org/x/crypto/bcrypt
 golang.org/x/crypto/blowfish
 # golang.org/x/time v0.0.0-20200630173020-3af7569d3a1e
+## explicit
 golang.org/x/time/rate
 # googlemaps.github.io/maps v1.3.1
 ## explicit
 googlemaps.github.io/maps
 googlemaps.github.io/maps/internal
 googlemaps.github.io/maps/metrics
+# gopkg.in/go-playground/assert.v1 v1.2.1
+## explicit
 # gopkg.in/go-playground/validator.v9 v9.31.0
 ## explicit
 gopkg.in/go-playground/validator.v9

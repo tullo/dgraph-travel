@@ -8,10 +8,10 @@ import (
 	"net/http"
 
 	"github.com/AvraamMavridis/randomcolor"
-	"github.com/dgraph-io/travel/business/data"
-	"github.com/dgraph-io/travel/business/data/city"
-	"github.com/dgraph-io/travel/business/data/place"
-	"github.com/dgraph-io/travel/foundation/web"
+	"github.com/tullo/dgraph-travel/business/data"
+	"github.com/tullo/dgraph-travel/business/data/city"
+	"github.com/tullo/dgraph-travel/business/data/place"
+	"github.com/tullo/dgraph-travel/foundation/web"
 	"github.com/dimfeld/httptreemux/v5"
 	"github.com/pkg/errors"
 )

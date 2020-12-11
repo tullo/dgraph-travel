@@ -8,9 +8,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/dgraph-io/travel/business/data"
-	"github.com/dgraph-io/travel/business/data/auth"
-	"github.com/dgraph-io/travel/business/data/user"
+	"github.com/tullo/dgraph-travel/business/data"
+	"github.com/tullo/dgraph-travel/business/data/auth"
+	"github.com/tullo/dgraph-travel/business/data/user"
 	"github.com/dgrijalva/jwt-go/v4"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"

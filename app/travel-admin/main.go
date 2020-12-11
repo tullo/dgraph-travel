@@ -7,11 +7,11 @@ import (
 	"os"
 
 	"github.com/ardanlabs/conf"
-	"github.com/dgraph-io/travel/app/travel-admin/commands"
-	"github.com/dgraph-io/travel/business/data"
-	"github.com/dgraph-io/travel/business/data/schema"
-	"github.com/dgraph-io/travel/business/data/user"
-	"github.com/dgraph-io/travel/business/loader"
+	"github.com/tullo/dgraph-travel/app/travel-admin/commands"
+	"github.com/tullo/dgraph-travel/business/data"
+	"github.com/tullo/dgraph-travel/business/data/schema"
+	"github.com/tullo/dgraph-travel/business/data/user"
+	"github.com/tullo/dgraph-travel/business/loader"
 	"github.com/pkg/errors"
 )
 

@@ -6,10 +6,10 @@ import (
 	"log"
 	"time"
 
-	"github.com/dgraph-io/travel/business/data"
-	"github.com/dgraph-io/travel/business/data/user"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
+	"github.com/tullo/dgraph-travel/business/data"
+	"github.com/tullo/dgraph-travel/business/data/user"
 )
 
 // AddUser handles the creation of users.

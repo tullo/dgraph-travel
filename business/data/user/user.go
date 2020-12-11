@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/ardanlabs/graphql"
-	"github.com/dgraph-io/travel/business/data"
+	"github.com/tullo/dgraph-travel/business/data"
 	"github.com/pkg/errors"
 	"golang.org/x/crypto/bcrypt"
 )

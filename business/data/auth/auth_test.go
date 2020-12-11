@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/dgraph-io/travel/business/data/auth"
+	"github.com/tullo/dgraph-travel/business/data/auth"
 	"github.com/dgrijalva/jwt-go/v4"
 )
 

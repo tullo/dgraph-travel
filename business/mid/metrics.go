@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/dgraph-io/travel/foundation/web"
+	"github.com/tullo/dgraph-travel/foundation/web"
 )
 
 // m contains the global program counters for the application.

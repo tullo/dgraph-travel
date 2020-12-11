@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/dgraph-io/travel/business/data"
-	"github.com/dgraph-io/travel/business/data/schema"
-	"github.com/dgraph-io/travel/business/loader"
+	"github.com/tullo/dgraph-travel/business/data"
+	"github.com/tullo/dgraph-travel/business/data/schema"
+	"github.com/tullo/dgraph-travel/business/loader"
 	"github.com/google/uuid"
 )
 
