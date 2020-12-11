@@ -1,5 +1,5 @@
 # Build the Go Binary.
-FROM golang:1.15.5-alpine3.12 as builder
+FROM golang:1.15.6-alpine3.12 as builder
 ENV CGO_ENABLED 0
 ARG VCS_REF
 
@@ -33,6 +33,6 @@ CMD ["/app/travel-ui"]
 LABEL org.opencontainers.image.created="${BUILD_DATE}" \
       org.opencontainers.image.title="travel-ui" \
       org.opencontainers.image.authors="ArdanLabs, Dgraph" \
-      org.opencontainers.image.source="https://github.com/dgraph-io/travel/app/travel-ui" \
+      org.opencontainers.image.source="https://github.com/tullo/dgraph-travel/app/travel-ui" \
       org.opencontainers.image.revision="${VCS_REF}" \
       org.opencontainers.image.vendor="Dgraph"
