@@ -9,7 +9,7 @@ services:
   dgraph-zero:
     command: dgraph zero
     container_name: dgraph-zero
-    image: dgraph/dgraph:v20.07.2
+    image: dgraph/dgraph:v20.11.0
     networks:
       shared-network:
 
@@ -19,7 +19,7 @@ services:
     depends_on:
       dgraph-zero:
         condition: service_started
-    image: dgraph/dgraph:v20.07.2
+    image: dgraph/dgraph:v20.11.0
     networks:
       shared-network:
 
