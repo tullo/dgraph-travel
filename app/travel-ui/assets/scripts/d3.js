@@ -85,7 +85,7 @@ function drawchart(city) {
     document.querySelector("div.graphbox").innerHTML = "";
     
     const err = function(error) {
-        document.querySelector("div.graphbox").innerHTML = "no data for city: " + city;
+        document.querySelector("div.graphbox").textContent = "no data for city: " + city;
     }
     d3.json("/data/" + city).then(makechart).catch(err);
 }
