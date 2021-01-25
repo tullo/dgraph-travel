@@ -11,11 +11,11 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/ardanlabs/conf"
+	"github.com/pkg/errors"
+	"github.com/tullo/conf"
 	"github.com/tullo/dgraph-travel/app/travel-api/handlers"
 	"github.com/tullo/dgraph-travel/business/data"
 	"github.com/tullo/dgraph-travel/business/loader"
-	"github.com/pkg/errors"
 )
 
 // build is the git version of this program. It is set using build flags in the makefile.
@@ -65,8 +65,8 @@ func run(log *log.Logger) error {
 			AuthToken      string
 		}
 	}
-	cfg.Version.SVN = build
-	cfg.Version.Desc = "copyright information here"
+	cfg.Version.Version = build
+	cfg.Version.Description = "copyright information here"
 
 	const prefix = "TRAVEL"
 	if err := conf.Parse(os.Args[1:], prefix, &cfg); err != nil {
@@ -79,7 +79,7 @@ func run(log *log.Logger) error {
 			fmt.Println(usage)
 			return nil
 		case conf.ErrVersionWanted:
-			version, err := conf.VersionString(prefix, &cfg)
+			version, err := conf.VersionString(&cfg)
 			if err != nil {
 				return errors.Wrap(err, "generating config version")
 			}

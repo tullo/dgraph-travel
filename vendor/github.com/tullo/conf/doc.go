@@ -11,7 +11,7 @@ value and parses it for both the environment and flags. It supports several tags
 to customize the flag options.
 
 	default  - Provides the default value for the help
-	env      - Allows for overriding the default variable name.
+	env      - Allows to set a value using env variable name.
 	flag     - Allows for overriding the default flag name.
 	short    - Denotes a shorthand option for the flag.
 	noprint  - Denotes to not include the field in any display string.
@@ -121,4 +121,4 @@ Then you can set these values at run time for display.
 		fmt.Println("parsing config", err)
 	}
 */
-package conf
+package conf // import "github.com/tullo/conf"

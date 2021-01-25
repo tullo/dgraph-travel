@@ -1,13 +1,8 @@
 # Conf
 
-[![CircleCI](https://circleci.com/gh/ardanlabs/conf.svg?style=svg)](https://circleci.com/gh/ardanlabs/conf)
-
-Copyright 2018, 2019, 2020, Ardan Labs  
-info@ardanlabs.com
-
 ## Licensing
 
-```
+```txt
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -26,4 +21,4 @@ limitations under the License.
 Package conf provides support for using environmental variables and command
 line arguments for configuration.
 
-All of the documentation can be found on the [go.dev](https://pkg.go.dev/github.com/ardanlabs/conf?tab=doc) website.
+All of the documentation can be found on the [go.dev](https://pkg.go.dev/github.com/tullo/conf?tab=doc) website.
