@@ -56,7 +56,7 @@ compose-logs:
 # Running from within k8s/dev
 
 kind-up:
-	$(shell go env GOPATH)/bin/kind create cluster --image kindest/node:v1.20.0 --name dgraph-travel-cluster --config deployment/k8s/dev/kind-config.yaml
+	$(shell go env GOPATH)/bin/kind create cluster --image kindest/node:v1.20.2 --name dgraph-travel-cluster --config deployment/k8s/dev/kind-config.yaml
 
 kind-down:
 	$(shell go env GOPATH)/bin/kind delete cluster --name dgraph-travel-cluster
