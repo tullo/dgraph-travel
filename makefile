@@ -159,7 +159,7 @@ seed: schema
 
 test:
 	go test ./... -count=1
-	$(shell go env GOPATH)/bin/staticcheck ./...
+	$$(go env GOPATH)/bin/staticcheck -go 1.16 -tests ./...
 
 # Modules support
 
