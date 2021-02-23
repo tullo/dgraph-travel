@@ -57,3 +57,4 @@ _testmain.go
 *.exe
 //*.test
 .vscode/tasks.json
+*.log
