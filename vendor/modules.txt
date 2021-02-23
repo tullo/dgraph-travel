@@ -37,7 +37,7 @@ github.com/pkg/errors
 # github.com/tullo/conf v1.3.6
 ## explicit
 github.com/tullo/conf
-# go.opencensus.io v0.22.5
+# go.opencensus.io v0.22.6
 ## explicit
 go.opencensus.io/internal/tagencoding
 go.opencensus.io/metric/metricdata
@@ -47,11 +47,11 @@ go.opencensus.io/stats
 go.opencensus.io/stats/internal
 go.opencensus.io/stats/view
 go.opencensus.io/tag
-# golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad
+# golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83
 ## explicit
 golang.org/x/crypto/bcrypt
 golang.org/x/crypto/blowfish
-# golang.org/x/time v0.0.0-20201208040808-7e3f01d25324
+# golang.org/x/time v0.0.0-20210220033141-f8bda1e9f3ba
 ## explicit
 golang.org/x/time/rate
 # googlemaps.github.io/maps v1.3.1
