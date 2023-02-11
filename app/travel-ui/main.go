@@ -70,7 +70,7 @@ func run(log *log.Logger) error {
 			fmt.Println(usage)
 			return nil
 		case conf.ErrVersionWanted:
-			version, err := conf.VersionString(&cfg)
+			version, err := conf.VersionString(prefix, &cfg)
 			if err != nil {
 				return errors.Wrap(err, "generating config version")
 			}
