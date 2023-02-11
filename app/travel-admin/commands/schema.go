@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/google/uuid"
 	"github.com/tullo/dgraph-travel/business/data"
 	"github.com/tullo/dgraph-travel/business/data/schema"
 	"github.com/tullo/dgraph-travel/business/loader"
-	"github.com/google/uuid"
 )
 
 // Schema handles the updating of the schema.

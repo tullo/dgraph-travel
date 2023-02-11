@@ -7,11 +7,11 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/pkg/errors"
 	"github.com/tullo/dgraph-travel/business/data"
 	"github.com/tullo/dgraph-travel/business/data/schema"
 	"github.com/tullo/dgraph-travel/business/loader"
 	"github.com/tullo/dgraph-travel/foundation/web"
-	"github.com/pkg/errors"
 )
 
 type feedGroup struct {

@@ -8,10 +8,10 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/pkg/errors"
 	"github.com/tullo/dgraph-travel/business/data"
 	"github.com/tullo/dgraph-travel/business/mid"
 	"github.com/tullo/dgraph-travel/foundation/web"
-	"github.com/pkg/errors"
 )
 
 // UI constructs an http.Handler with all application routes defined.

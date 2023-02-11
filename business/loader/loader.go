@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/ardanlabs/graphql"
+	"github.com/pkg/errors"
 	"github.com/tullo/dgraph-travel/business/data"
 	"github.com/tullo/dgraph-travel/business/data/advisory"
 	"github.com/tullo/dgraph-travel/business/data/city"
@@ -18,7 +19,6 @@ import (
 	advisoryfeed "github.com/tullo/dgraph-travel/business/feeds/advisory"
 	placesfeed "github.com/tullo/dgraph-travel/business/feeds/places"
 	weatherfeed "github.com/tullo/dgraph-travel/business/feeds/weather"
-	"github.com/pkg/errors"
 	"googlemaps.github.io/maps"
 )
 

@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"runtime/debug"
 
-	"github.com/tullo/dgraph-travel/foundation/web"
 	"github.com/pkg/errors"
+	"github.com/tullo/dgraph-travel/foundation/web"
 )
 
 // Panics recovers from panics and converts the panic to an error so it is

@@ -5,11 +5,11 @@ import (
 	"context"
 	"html/template"
 	"io"
-	"io/ioutil"
 	"net/http"
+	"os"
 
-	"github.com/tullo/dgraph-travel/business/data"
 	"github.com/pkg/errors"
+	"github.com/tullo/dgraph-travel/business/data"
 )
 
 type indexGroup struct {
@@ -21,7 +21,7 @@ type indexGroup struct {
 }
 
 func newIndex(gqlConfig data.GraphQLConfig, browserEndpoint string, mapsKey string) (indexGroup, error) {
-	rawTmpl, err := ioutil.ReadFile("assets/views/index.tmpl")
+	rawTmpl, err := os.ReadFile("assets/views/index.tmpl")
 	if err != nil {
 		return indexGroup{}, errors.Wrap(err, "reading index page")
 	}

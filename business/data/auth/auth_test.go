@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tullo/dgraph-travel/business/data/auth"
 	"github.com/dgrijalva/jwt-go/v4"
+	"github.com/tullo/dgraph-travel/business/data/auth"
 )
 
 // Success and failure markers.

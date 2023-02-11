@@ -8,12 +8,12 @@ import (
 	"net/http"
 
 	"github.com/AvraamMavridis/randomcolor"
+	"github.com/dimfeld/httptreemux/v5"
+	"github.com/pkg/errors"
 	"github.com/tullo/dgraph-travel/business/data"
 	"github.com/tullo/dgraph-travel/business/data/city"
 	"github.com/tullo/dgraph-travel/business/data/place"
 	"github.com/tullo/dgraph-travel/foundation/web"
-	"github.com/dimfeld/httptreemux/v5"
-	"github.com/pkg/errors"
 )
 
 type fetchGroup struct {

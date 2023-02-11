@@ -10,6 +10,8 @@ import (
 	"time"
 
 	"github.com/ardanlabs/graphql"
+	"github.com/dgrijalva/jwt-go/v4"
+	"github.com/google/go-cmp/cmp"
 	"github.com/tullo/dgraph-travel/business/data"
 	"github.com/tullo/dgraph-travel/business/data/advisory"
 	"github.com/tullo/dgraph-travel/business/data/auth"
@@ -20,8 +22,6 @@ import (
 	"github.com/tullo/dgraph-travel/business/data/user"
 	"github.com/tullo/dgraph-travel/business/data/weather"
 	"github.com/tullo/dgraph-travel/foundation/tests"
-	"github.com/dgrijalva/jwt-go/v4"
-	"github.com/google/go-cmp/cmp"
 	"golang.org/x/crypto/bcrypt"
 )
 

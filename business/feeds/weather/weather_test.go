@@ -7,9 +7,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/google/go-cmp/cmp"
 	"github.com/tullo/dgraph-travel/business/feeds/weather"
 	"github.com/tullo/dgraph-travel/foundation/tests"
-	"github.com/google/go-cmp/cmp"
 )
 
 // Success and failure markers.

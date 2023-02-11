@@ -6,10 +6,10 @@ import (
 	"log"
 	"time"
 
-	"github.com/tullo/dgraph-travel/business/data"
-	"github.com/tullo/dgraph-travel/business/data/user"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
+	"github.com/tullo/dgraph-travel/business/data"
+	"github.com/tullo/dgraph-travel/business/data/user"
 )
 
 // GetUser returns information about a user by email.

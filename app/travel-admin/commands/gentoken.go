@@ -4,16 +4,16 @@ import (
 	"context"
 	"crypto/rsa"
 	"fmt"
-	"io/ioutil"
 	"log"
+	"os"
 	"time"
 
-	"github.com/tullo/dgraph-travel/business/data"
-	"github.com/tullo/dgraph-travel/business/data/auth"
-	"github.com/tullo/dgraph-travel/business/data/user"
 	"github.com/dgrijalva/jwt-go/v4"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
+	"github.com/tullo/dgraph-travel/business/data"
+	"github.com/tullo/dgraph-travel/business/data/auth"
+	"github.com/tullo/dgraph-travel/business/data/user"
 )
 
 // GenToken generates a JWT for the specified user.
@@ -37,7 +37,7 @@ func GenToken(log *log.Logger, gqlConfig data.GraphQLConfig, email string, priva
 		return errors.Wrap(err, "getting user")
 	}
 
-	privatePEM, err := ioutil.ReadFile(privateKeyFile)
+	privatePEM, err := os.ReadFile(privateKeyFile)
 	if err != nil {
 		return errors.Wrap(err, "reading PEM private key file")
 	}
