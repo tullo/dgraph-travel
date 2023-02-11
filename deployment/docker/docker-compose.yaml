@@ -6,12 +6,27 @@ networks:
 
 services:
 
+  dgraph-ratel:
+    command: dgraph-ratel
+    container_name: dgraph-ratel
+    image: dgraph/ratel:v21.12.0
+    ports:
+      - 8000:8000
+    networks:
+      - shared-network
+    healthcheck:
+      test: ["CMD", "netstat", "-plnt", "|", "grep", ":8000"]
+      interval: 10s
+      start_period: 10s
+      timeout: 5s
+      retries: 3
+
   dgraph-zero:
     command: dgraph zero
     container_name: dgraph-zero
-    image: dgraph/dgraph:v20.11.2
+    image: dgraph/dgraph:v22.0.2
     networks:
-      shared-network:
+      - shared-network
 
   dgraph-alpha:
     command: dgraph alpha --vmodule=server=3
@@ -19,9 +34,9 @@ services:
     depends_on:
       dgraph-zero:
         condition: service_started
-    image: dgraph/dgraph:v20.11.2
+    image: dgraph/dgraph:v22.0.2
     networks:
-      shared-network:
+      - shared-network
 
   travel-api:
     container_name: travel-api
@@ -30,7 +45,7 @@ services:
         condition: service_started
     image: travel-api-amd64:1.0
     networks:
-      shared-network:
+      - shared-network
 
   travel-ui:
     container_name: travel-ui
@@ -39,4 +54,4 @@ services:
         condition: service_started
     image: travel-ui-amd64:1.0
     networks:
-      shared-network:
+      - shared-network
