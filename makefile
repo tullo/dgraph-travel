@@ -159,7 +159,7 @@ seed: schema
 
 test:
 	go test ./... -count=1
-	$$(go env GOPATH)/bin/staticcheck -go 1.16 -tests ./...
+	$$(go env GOPATH)/bin/staticcheck -go 1.20 -tests ./...
 
 # Modules support
 
@@ -183,7 +183,7 @@ deps-cleancache:
 # ==============================================================================
 # Docker support
 
-containers := $$(docker ps -aq --filter name=travel-ui --filter name=travel-api --filter name=dgraph-alpha --filter name=dgraph-zero)
+containers := $$(docker ps -aq --filter name=travel-ui --filter name=travel-api --filter name=dgraph-alpha --filter name=dgraph-zero --filter name=dgraph-ratel)
 
 down-local:
 	@docker container stop ${containers}
