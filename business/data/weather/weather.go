@@ -7,8 +7,8 @@ import (
 	"log"
 
 	"github.com/ardanlabs/graphql"
-	"github.com/tullo/dgraph-travel/business/data"
 	"github.com/pkg/errors"
+	"github.com/tullo/dgraph-travel/business/data"
 )
 
 // Set of error variables for CRUD operations.
@@ -88,7 +88,7 @@ query {
 			Weather Info `json:"weather"`
 		} `json:"getCity"`
 	}
-	if err := w.gql.Query(ctx, query, &result); err != nil {
+	if err := w.gql.Execute(ctx, query, &result); err != nil {
 		return Info{}, errors.Wrap(err, "query failed")
 	}
 
@@ -105,7 +105,7 @@ func (w Weather) add(ctx context.Context, traceID string, wth Info) (Info, error
 	mutation, result := prepareAdd(wth)
 	w.log.Printf("%s: %s: %s", traceID, "weather.Add", data.Log(mutation))
 
-	if err := w.gql.Query(ctx, mutation, &result); err != nil {
+	if err := w.gql.Execute(ctx, mutation, &result); err != nil {
 		return Info{}, errors.Wrap(err, "failed to add weather")
 	}
 
@@ -126,7 +126,7 @@ func (w Weather) delete(ctx context.Context, traceID string, cityID string) erro
 	mutation, result := prepareDelete(wth.ID)
 	w.log.Printf("%s: %s: %s", traceID, "weather.Delete", data.Log(mutation))
 
-	if err := w.gql.Query(ctx, mutation, &result); err != nil {
+	if err := w.gql.Execute(ctx, mutation, &result); err != nil {
 		return errors.Wrap(err, "failed to delete weather")
 	}
 
