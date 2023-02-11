@@ -14,6 +14,7 @@ to customize the flag options.
 	env      - Allows to set a value using env variable name.
 	flag     - Allows for overriding the default flag name.
 	short    - Denotes a shorthand option for the flag.
+	mask     - Includes the field in any display string but masks out the value.
 	noprint  - Denotes to not include the field in any display string.
 	required - Denotes a value must be provided.
 	help     - Provides a description for the help.

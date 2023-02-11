@@ -1,44 +1,44 @@
 # github.com/AvraamMavridis/randomcolor v0.0.0-20180822172341-208aff70bf2c
 ## explicit
 github.com/AvraamMavridis/randomcolor
-# github.com/ardanlabs/graphql v1.4.2
-## explicit
+# github.com/ardanlabs/graphql v1.6.2
+## explicit; go 1.14
 github.com/ardanlabs/graphql
 # github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1
-## explicit
+## explicit; go 1.12
 github.com/dgrijalva/jwt-go/v4
-# github.com/dimfeld/httptreemux/v5 v5.2.2
-## explicit
+# github.com/dimfeld/httptreemux/v5 v5.5.0
+## explicit; go 1.9
 github.com/dimfeld/httptreemux/v5
-# github.com/go-playground/locales v0.13.0
-## explicit
+# github.com/go-playground/locales v0.14.1
+## explicit; go 1.17
 github.com/go-playground/locales
 github.com/go-playground/locales/currency
 github.com/go-playground/locales/en
-# github.com/go-playground/universal-translator v0.17.0
-## explicit
+# github.com/go-playground/universal-translator v0.18.1
+## explicit; go 1.18
 github.com/go-playground/universal-translator
-# github.com/google/go-cmp v0.5.4
-## explicit
+# github.com/google/go-cmp v0.5.9
+## explicit; go 1.13
 github.com/google/go-cmp/cmp
 github.com/google/go-cmp/cmp/internal/diff
 github.com/google/go-cmp/cmp/internal/flags
 github.com/google/go-cmp/cmp/internal/function
 github.com/google/go-cmp/cmp/internal/value
-# github.com/google/uuid v1.2.0
+# github.com/google/uuid v1.3.0
 ## explicit
 github.com/google/uuid
 # github.com/leodido/go-urn v1.2.1
-## explicit
+## explicit; go 1.13
 github.com/leodido/go-urn
 # github.com/pkg/errors v0.9.1
 ## explicit
 github.com/pkg/errors
-# github.com/tullo/conf v1.3.6
-## explicit
+# github.com/tullo/conf v1.3.7
+## explicit; go 1.15
 github.com/tullo/conf
-# go.opencensus.io v0.22.6
-## explicit
+# go.opencensus.io v0.24.0
+## explicit; go 1.13
 go.opencensus.io/internal/tagencoding
 go.opencensus.io/metric/metricdata
 go.opencensus.io/metric/metricproducer
@@ -47,15 +47,15 @@ go.opencensus.io/stats
 go.opencensus.io/stats/internal
 go.opencensus.io/stats/view
 go.opencensus.io/tag
-# golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83
-## explicit
+# golang.org/x/crypto v0.6.0
+## explicit; go 1.17
 golang.org/x/crypto/bcrypt
 golang.org/x/crypto/blowfish
-# golang.org/x/time v0.0.0-20210220033141-f8bda1e9f3ba
+# golang.org/x/time v0.3.0
 ## explicit
 golang.org/x/time/rate
-# googlemaps.github.io/maps v1.3.1
-## explicit
+# googlemaps.github.io/maps v1.4.0
+## explicit; go 1.14
 googlemaps.github.io/maps
 googlemaps.github.io/maps/internal
 googlemaps.github.io/maps/metrics

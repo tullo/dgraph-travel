@@ -9,7 +9,6 @@ Go Client for Google Maps Services
 Use Go? Want to [geocode][Geocoding API] something? Looking for [directions][Directions API]?
 Maybe [matrices of directions][Distance Matrix API]? This library brings the [Google Maps API Web
 Services] to your Go application.
-![Analytics](https://maps-ga-beacon.appspot.com/UA-12846745-20/google-maps-services-go/readme?pixel)
 
 The Go Client for Google Maps Services is a Go Client library for the following Google Maps
 APIs:
@@ -79,7 +78,7 @@ For even more information, see the guide to [API keys][apikey].
 To install the Go Client for Google Maps Services, please execute the following `go get` command.
 
 ```bash
-    go get googlemaps.github.io/maps
+go get googlemaps.github.io/maps
 ```
 
 ## Developer Documentation

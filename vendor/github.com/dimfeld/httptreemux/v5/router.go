@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"strings"
 )
 
 // The params argument contains the parameters parsed from wildcards and catch-alls in the URL.
@@ -54,7 +55,8 @@ type LookupResult struct {
 	// will also be used in the case
 	StatusCode  int
 	handler     HandlerFunc
-	params      map[string]string
+	// Params represents the key value pairs of the path parameters.
+	Params      map[string]string
 	leafHandler map[string]HandlerFunc // Only has a value when StatusCode is MethodNotAllowed.
 }
 
@@ -124,6 +126,10 @@ func (t *TreeMux) lookup(w http.ResponseWriter, r *http.Request) (result LookupR
 		// RequestURI is not set so just grab URL.Path instead.
 		path = r.URL.Path
 		pathLen = len(path)
+	}
+	if t.CaseInsensitive {
+		path = strings.ToLower(path)
+		unescapedPath = strings.ToLower(unescapedPath)
 	}
 
 	trailingSlash := path[pathLen-1] == '/' && pathLen > 1
@@ -244,7 +250,7 @@ func (t *TreeMux) ServeLookupResult(w http.ResponseWriter, r *http.Request, lr L
 		}
 	} else {
 		r = t.setDefaultRequestContext(r)
-		lr.handler(w, r, lr.params)
+		lr.handler(w, r, lr.Params)
 	}
 }
 

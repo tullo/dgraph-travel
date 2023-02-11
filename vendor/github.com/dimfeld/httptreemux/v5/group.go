@@ -138,8 +138,16 @@ func (g *Group) Handle(method string, path string, handler HandlerFunc) {
 		handler = handlerWithMiddlewares(handler, g.stack)
 	}
 
+	g.addFullStackHandler(method, path, handler)
+}
+
+func (g *Group) addFullStackHandler(method string, path string, handler HandlerFunc) {
 	addSlash := false
 	addOne := func(thePath string) {
+		if g.mux.CaseInsensitive {
+			thePath = strings.ToLower(thePath)
+		}
+
 		node := g.mux.root.addPath(thePath[1:], nil, false)
 		if addSlash {
 			node.addSlash = true
@@ -175,6 +183,7 @@ func (g *Group) Handle(method string, path string, handler HandlerFunc) {
 	}
 
 	addOne(path)
+
 }
 
 // Syntactic sugar for Handle("GET", path, handler)
