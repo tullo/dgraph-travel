@@ -14,7 +14,7 @@ all: api ui
 api:
 	docker build \
 		-f deployment/docker/dockerfile.travel-api \
-		-t travel-api-amd64:1.0 \
+		-t tullo/travel-api-amd64:1.0 \
 		--build-arg VCS_REF=$$(git rev-parse HEAD) \
 		--build-arg BUILD_DATE=$$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
 		.
@@ -62,7 +62,7 @@ kind-down:
 	$(shell go env GOPATH)/bin/kind delete cluster --name dgraph-travel-cluster
 
 kind-load:
-	$(shell go env GOPATH)/bin/kind load docker-image travel-api-amd64:1.0 --name dgraph-travel-cluster
+	$(shell go env GOPATH)/bin/kind load docker-image tullo/travel-api-amd64:1.0 --name dgraph-travel-cluster
 	$(shell go env GOPATH)/bin/kind load docker-image travel-ui-amd64:1.0 --name dgraph-travel-cluster
 
 kind-list:
@@ -72,7 +72,7 @@ kind-services:
 	$(shell go env GOPATH)/bin/kustomize build deployment/k8s/dev | kubectl apply -f -
 
 kind-api: api
-	$(shell go env GOPATH)/bin/kind load docker-image travel-api-amd64:1.0 --name dgraph-travel-cluster
+	$(shell go env GOPATH)/bin/kind load docker-image tullo/travel-api-amd64:1.0 --name dgraph-travel-cluster
 	kubectl delete pods -lapp=travel
 
 kind-ui: ui
