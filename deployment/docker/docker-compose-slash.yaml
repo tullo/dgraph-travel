@@ -20,7 +20,7 @@ services:
     container_name: travel-ui
     env_file:
       - slash.env
-    image: travel-ui-amd64:1.0
+    image: tullo/travel-ui-amd64:1.0
     networks:
       shared-network:
     ports:
