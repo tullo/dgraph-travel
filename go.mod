@@ -13,7 +13,7 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/pkg/errors v0.9.1
 	github.com/tullo/conf v1.3.7
-	golang.org/x/crypto v0.6.0
+	golang.org/x/crypto v0.9.0
 	googlemaps.github.io/maps v1.4.0
 	gopkg.in/go-playground/validator.v9 v9.31.0
 )
