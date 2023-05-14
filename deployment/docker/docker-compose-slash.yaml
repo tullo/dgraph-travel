@@ -8,7 +8,7 @@ services:
     container_name: travel-api
     env_file:
       - slash.env
-    image: travel-api-amd64:1.0
+    image: tullo/travel-api-amd64:1.0
     networks:
       shared-network:
     ports:
