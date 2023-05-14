@@ -43,7 +43,7 @@ services:
     depends_on:
       dgraph-alpha:
         condition: service_started
-    image: travel-api-amd64:1.0
+    image: tullo/travel-api-amd64:1.0
     networks:
       - shared-network
 
@@ -52,6 +52,6 @@ services:
     depends_on:
       dgraph-alpha:
         condition: service_started
-    image: travel-ui-amd64:1.0
+    image: tullo/travel-ui-amd64:1.0
     networks:
       - shared-network
