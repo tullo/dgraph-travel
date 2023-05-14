@@ -22,7 +22,7 @@ api:
 ui:
 	docker build \
 		-f deployment/docker/dockerfile.travel-ui \
-		-t travel-ui-amd64:1.0 \
+		-t tullo/travel-ui-amd64:1.0 \
 		--build-arg VCS_REF=$$(git rev-parse HEAD) \
 		--build-arg BUILD_DATE=$$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
 		.
@@ -33,22 +33,22 @@ ui:
 run: compose-up seed browse
 
 compose-config:
-	docker-compose -f deployment/docker/docker-compose.yaml \
+	docker compose -f deployment/docker/docker-compose.yaml \
 	-f deployment/docker/docker-compose.override.yaml \
 	config
 
 compose-up:
-	docker-compose -f deployment/docker/docker-compose.yaml \
+	docker compose -f deployment/docker/docker-compose.yaml \
 	-f deployment/docker/docker-compose.override.yaml \
 	up --detach --remove-orphans
 
 compose-down:
-	docker-compose -f deployment/docker/docker-compose.yaml \
+	docker compose -f deployment/docker/docker-compose.yaml \
 	-f deployment/docker/docker-compose.override.yaml \
 	down --remove-orphans
 
 compose-logs:
-	docker-compose -f deployment/docker/docker-compose.yaml \
+	docker compose -f deployment/docker/docker-compose.yaml \
 	-f deployment/docker/docker-compose.override.yaml \
 	logs -f
 
@@ -63,7 +63,7 @@ kind-down:
 
 kind-load:
 	$(shell go env GOPATH)/bin/kind load docker-image tullo/travel-api-amd64:1.0 --name dgraph-travel-cluster
-	$(shell go env GOPATH)/bin/kind load docker-image travel-ui-amd64:1.0 --name dgraph-travel-cluster
+	$(shell go env GOPATH)/bin/kind load docker-image tullo/travel-ui-amd64:1.0 --name dgraph-travel-cluster
 
 kind-list:
 	@docker exec -it dgraph-travel-cluster-control-plane crictl images
@@ -76,7 +76,7 @@ kind-api: api
 	kubectl delete pods -lapp=travel
 
 kind-ui: ui
-	$(shell go env GOPATH)/bin/kind load docker-image travel-ui-amd64:1.0 --name dgraph-travel-cluster
+	$(shell go env GOPATH)/bin/kind load docker-image tullo/travel-ui-amd64:1.0 --name dgraph-travel-cluster
 	kubectl delete pods -lapp=travel
 
 kind-logs:
@@ -104,19 +104,19 @@ kind-seed: kind-schema
 slash-run: slash-up seed slash-browse
 
 slash-conf:
-	docker-compose -f deployment/docker/docker-compose-slash.yaml config
+	docker compose -f deployment/docker/docker-compose-slash.yaml config
 
 slash-up:
-	docker-compose -f deployment/docker/docker-compose-slash.yaml up --detach --remove-orphans
+	docker compose -f deployment/docker/docker-compose-slash.yaml up --detach --remove-orphans
 
 slash-down:
-	docker-compose -f deployment/docker/docker-compose-slash.yaml down --remove-orphans
+	docker compose -f deployment/docker/docker-compose-slash.yaml down --remove-orphans
 
 slash-browse:
 	python -m webbrowser "http://localhost"
 
 slash-logs:
-	docker-compose -f deployment/docker/docker-compose-slash.yaml logs -f
+	docker compose -f deployment/docker/docker-compose-slash.yaml logs -f
 
 # ==============================================================================
 # Running Local
