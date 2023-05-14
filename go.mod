@@ -15,7 +15,7 @@ require (
 	github.com/tullo/conf v1.3.7
 	golang.org/x/crypto v0.9.0
 	googlemaps.github.io/maps v1.4.0
-	gopkg.in/go-playground/validator.v9 v9.31.0
+	gopkg.in/go-playground/validator.v10 v10.13.0
 )
 
 require (
