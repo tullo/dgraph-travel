@@ -15,7 +15,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/tullo/conf v1.3.7
 	golang.org/x/crypto v0.16.0
-	googlemaps.github.io/maps v1.5.0
+	googlemaps.github.io/maps v1.7.0
 )
 
 require (
