@@ -14,7 +14,7 @@ require (
 	github.com/google/uuid v1.5.0
 	github.com/pkg/errors v0.9.1
 	github.com/tullo/conf v1.3.7
-	golang.org/x/crypto v0.16.0
+	golang.org/x/crypto v0.17.0
 	googlemaps.github.io/maps v1.7.0
 )
 
