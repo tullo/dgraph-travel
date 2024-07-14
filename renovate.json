@@ -4,5 +4,5 @@
   "automerge": true,
   "ignoreTests": true,
   "postUpdateOptions": ["gomodTidy"],
-  "constraints": {"go": "1.20"}
+  "constraints": {"go": "1.22"}
 }
