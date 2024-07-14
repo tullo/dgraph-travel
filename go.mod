@@ -1,6 +1,6 @@
 module github.com/tullo/dgraph-travel
 
-go 1.20
+go 1.22
 
 require (
 	github.com/AvraamMavridis/randomcolor v0.0.0-20180822172341-208aff70bf2c
