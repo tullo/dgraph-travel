@@ -3,6 +3,6 @@
   "extends": ["config:base"],
   "automerge": true,
   "ignoreTests": true,
-  "postUpdateOptions": ["gomodTidy"],
+  "postUpdateOptions": ["gomodTidy","gomodUpdateImportPaths"],
   "constraints": {"go": "1.23"}
 }
