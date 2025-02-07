@@ -14,7 +14,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/pkg/errors v0.9.1
 	github.com/tullo/conf v1.3.7
-	golang.org/x/crypto v0.32.0
+	golang.org/x/crypto v0.33.0
 	googlemaps.github.io/maps v1.7.0
 )
 
@@ -23,7 +23,7 @@ require (
 	github.com/leodido/go-urn v1.4.0 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	golang.org/x/net v0.34.0 // indirect
-	golang.org/x/sys v0.29.0 // indirect
-	golang.org/x/text v0.21.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
+	golang.org/x/text v0.22.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
 )
