@@ -1,6 +1,8 @@
 module github.com/tullo/dgraph-travel
 
-go 1.22
+go 1.23.0
+
+toolchain go1.23.6
 
 require (
 	github.com/AvraamMavridis/randomcolor v0.0.0-20180822172341-208aff70bf2c
@@ -14,7 +16,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/pkg/errors v0.9.1
 	github.com/tullo/conf v1.3.7
-	golang.org/x/crypto v0.33.0
+	golang.org/x/crypto v0.34.0
 	googlemaps.github.io/maps v1.7.0
 )
 
