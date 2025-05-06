@@ -2,7 +2,7 @@ module github.com/tullo/dgraph-travel
 
 go 1.23.0
 
-toolchain go1.24.2
+toolchain go1.24.3
 
 require (
 	github.com/AvraamMavridis/randomcolor v0.0.0-20180822172341-208aff70bf2c
