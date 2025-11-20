@@ -1,6 +1,6 @@
 module github.com/tullo/dgraph-travel
 
-go 1.23.0
+go 1.24.0
 
 toolchain go1.25.4
 
@@ -16,16 +16,15 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/pkg/errors v0.9.1
 	github.com/tullo/conf v1.3.7
-	golang.org/x/crypto v0.44.0
+	golang.org/x/crypto v0.45.0
 	googlemaps.github.io/maps v1.7.0
 )
 
 require (
-	github.com/gabriel-vasile/mimetype v1.4.8 // indirect
+	github.com/gabriel-vasile/mimetype v1.4.10 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	go.opencensus.io v0.24.0 // indirect
-	golang.org/x/net v0.38.0 // indirect
-	golang.org/x/sys v0.32.0 // indirect
-	golang.org/x/text v0.24.0 // indirect
+	golang.org/x/sys v0.38.0 // indirect
+	golang.org/x/text v0.31.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
 )
