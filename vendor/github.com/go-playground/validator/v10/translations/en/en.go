@@ -1075,6 +1075,26 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 			override:    false,
 		},
 		{
+			tag:         "alphaspace",
+			translation: "{0} can only contain alphabetic and space characters",
+			override:    false,
+		},
+		{
+			tag:         "alphanumspace",
+			translation: "{0} can only contain alphanumeric and space characters",
+			override:    false,
+		},
+		{
+			tag:         "alphaunicode",
+			translation: "{0} can only contain unicode alphabetic characters",
+			override:    false,
+		},
+		{
+			tag:         "alphanumunicode",
+			translation: "{0} can only contain unicode alphanumeric characters",
+			override:    false,
+		},
+		{
 			tag:         "numeric",
 			translation: "{0} must be a valid numeric value",
 			override:    false,
@@ -1227,6 +1247,11 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 		{
 			tag:         "issn",
 			translation: "{0} must be a valid ISSN number",
+			override:    false,
+		},
+		{
+			tag:         "urn_rfc2141",
+			translation: "{0} must be a valid RFC 2141 URN",
 			override:    false,
 		},
 		{
@@ -1484,10 +1509,14 @@ func RegisterDefaultTranslations(v *validator.Validate, trans ut.Translator) (er
 			translation: "{0} must be a valid cve identifier",
 			override:    false,
 		},
+		{
+			tag:         "validateFn",
+			translation: "{0} must be a valid object",
+			override:    false,
+		},
 	}
 
 	for _, t := range translations {
-
 		if t.customTransFunc != nil && t.customRegisFunc != nil {
 			err = v.RegisterTranslation(t.tag, trans, t.customRegisFunc, t.customTransFunc)
 		} else if t.customTransFunc != nil && t.customRegisFunc == nil {
