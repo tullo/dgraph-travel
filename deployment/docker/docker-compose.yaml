@@ -9,7 +9,7 @@ services:
   dgraph-ratel:
     command: dgraph-ratel
     container_name: dgraph-ratel
-    image: dgraph/ratel:v25.0.5
+    image: dgraph/ratel:v25.0.6
     ports:
       - 8000:8000
     networks:
