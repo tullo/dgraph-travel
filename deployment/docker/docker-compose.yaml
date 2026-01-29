@@ -24,7 +24,7 @@ services:
   dgraph-zero:
     command: dgraph zero
     container_name: dgraph-zero
-    image: dgraph/dgraph:v25.1.0
+    image: dgraph/dgraph:v25.2.0
     networks:
       - shared-network
 
@@ -34,7 +34,7 @@ services:
     depends_on:
       dgraph-zero:
         condition: service_started
-    image: dgraph/dgraph:v25.1.0
+    image: dgraph/dgraph:v25.2.0
     networks:
       - shared-network
 
