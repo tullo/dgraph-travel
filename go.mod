@@ -11,7 +11,7 @@ require (
 	github.com/dimfeld/httptreemux/v5 v5.5.0
 	github.com/go-playground/locales v0.14.2
 	github.com/go-playground/universal-translator v0.18.2
-	github.com/go-playground/validator/v10 v10.30.5
+	github.com/go-playground/validator/v10 v10.30.6
 	github.com/google/go-cmp v0.7.0
 	github.com/google/uuid v1.6.0
 	github.com/pkg/errors v0.9.1
@@ -21,7 +21,7 @@ require (
 )
 
 require (
-	github.com/gabriel-vasile/mimetype v1.4.15 // indirect
+	github.com/gabriel-vasile/mimetype v1.4.16 // indirect
 	github.com/leodido/go-urn v1.5.0 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	golang.org/x/sys v0.49.0 // indirect
